@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Ananya">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="how to html">
+  <title>HTML handbook</title>
+  <link rel="stylesheet" href="hh.css">
+  <style>
+    details table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    details th, details td {
+      border: 1px solid #eee;
+      padding: 0.5rem 1rem;
+      text-align: center;
+    }
+
+    details summary {
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    code {
+      color: red;
+    }
+
+    #comment{
+      color: green;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <h1>Introduction to HTML</h1>
+    <h3>Table of Contents:</h3>
+    <nav>
+      <ol>
+        <li><a href="#intro">What is HTML?</a></li>
+        <li><a href="#structure">Basic Structure of an HTML Page</a></li>
+        <li><a href="#para">Headings, Paragraphs, Lines</a></li>
+        <li><a href="#entities">Entities</a></li>
+        <li><a href="#abbr">Abbreviations & Address</a></li>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#navigation">Links And Navigation</a></li>
+        <li><a href="#attributes">Attributes</a></li>
+        <li><a href="#comments">Comments</a></li>
+        <li><a href="#images">Images</a></li>
+        <li><a href="#semantic">Semantic Tags</a></li>
+        <li><a href="#tables">Tables</a></li>
+        <li><a href="#forms">Form</a></li>
+        <li><a href="#debugging">Debugging and tips</a></li>
+      </ol>
+    </nav>
+  </header>
+  <br>
+  <hr>
+  <main>
+    <section id="intro">
+      <h2>What is HTML?</h2>
+      <p>HTML or HyperText Markup Language is the backbone os webpages. It structures the contents you see online. Think of HTML as a skeleton. A website with only html looks like this one.</p>
+    </section>
+
+    <hr>
+
+    <section id="structure">
+      <h2>Basic Structures of an HTML Page</h2>
+      <p>Every HTML document starts with a <code>&lt;!DOCTYPE html&gt;</code> and has two main parts: <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code></p>
+      <pre>
+        <code>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+           &lt;head&gt;
+            &lt;title&gt;My First Page&lt;/title&gt;
+           &lt;/head&gt;
+           
+           &lt;body&gt;
+            <span id="comment"> &lt;!--Content that is visible on the webpage goes here--&gt;</span>
+           &lt;/body&gt;
+         &lt;/html&gt;
+        </code>
+      </pre>
+      <p>
+        The body can be further divided into 3 parts: <code>&lt;header&gt;, &lt;main&gt;, &lt;footer&gt;</code>
+        <br>
+        Each page can have only one Header and Footer. 
+        <br>
+        Header generally contents the title of the page and the table of contents or navigation.
+      </p>
+    </section>
+
+    <hr>
+
+    <section id="para">
+      <h2>Headings, Paragraphs, Lines</h2>
+      <ul>
+        <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> : Heading tags, where <code>&lt;h1&gt;</code> is the largest, and <code>&lt;h6&gt;</code> is the smallest</li>
+        <li><code>&lt;p&gt;</code>: for paragraph</li>
+        <li><code>&lt;br&gt;</code>: for line breaks</li>
+        <li><code>&lt;hr&gt;</code>: for horizontal line</li>
+      </ul>
+      <h5>Examples:</h5>
+      <pre>
+        <code>
+          &lt;h1&gt;Main Heading&lt;/h1&gt;
+          &lt;h2&gt;Subheading&lt;/h2&gt;
+          &lt;p&gt;This is a paragraph.&lt;/p&gt;
+        </code>
+      </pre>
+    </section>
+
+    <hr>
+    <section id="entities">
+      <h2>Entities</h2>
+      <p>
+        Represent the reserved characters of symbols in HTML. Useful when want to show &lt;, &gt;, etc. 
+      </p>
+      <details>
+        <summary><strong>Common HTML Entities</strong></summary>
+        <table>
+          <thead>
+            <tr>
+              <th>Entity</th>
+              <th>Output</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>&amp;lt;</td><td>&lt;</td><td>Less-than</td></tr>
+            <tr><td>&amp;gt;</td><td>&gt;</td><td>Greater-than</td></tr>
+            <tr><td>&amp;amp;</td><td>&amp;</td><td>Ampersand</td></tr>
+            <tr><td>&amp;quot;</td><td>&quot;</td><td>Double Quote</td></tr>
+            <tr><td>&amp;apos;</td><td>&apos;</td><td>Single Quote</td></tr>
+            <tr><td>&amp;nbsp;</td><td>&nbsp;</td><td>Non-breaking Space</td></tr>
+            <tr><td>&amp;copy;</td><td>&copy;</td><td>Copyright</td></tr>
+            <tr><td>&amp;reg;</td><td>&reg;</td><td>Registered Trademark</td></tr>
+            <tr><td>&amp;trade;</td><td>&trade;</td><td>Trademark</td></tr>
+            <tr><td>&amp;cent;</td><td>&cent;</td><td>Cents</td></tr>
+            <tr><td>&amp;euro;</td><td>&euro;</td><td>Euro</td></tr>
+            <tr><td>&amp;pound;</td><td>&pound;</td><td>Pound</td></tr>
+            <tr><td>&amp;yen;</td><td>&yen;</td><td>Yen</td></tr>
+            <tr><td>&amp;deg;</td><td>&deg;</td><td>Degree</td></tr>
+            <tr><td>&amp;hellip;</td><td>&hellip;</td><td>Ellipsis</td></tr>
+            <tr><td>&amp;ndash;</td><td>&ndash;</td><td>En Dash</td></tr>
+            <tr><td>&amp;bull;</td><td>&bull;</td><td>Bullet</td></tr>
+          </tbody>
+        </table>
+      </details>
+      <br>
+    </section>
+    <hr>
+    <section id="abbr">
+      <h2>Abbreviations & Address</h2>
+      <p><code>&lt;abbr&gt;</code> : Shows the full form when hovered over<br>
+      <code>&lt;address&gt;</code> : Shows the address.
+      </p>
+      <h5>Examples:</h5>
+      <pre>
+        <code>
+          <span>
+          &lt;abbr title="Mozilla Developer Network"
+          href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content"&gt;
+          MDN
+          &lt;/abbr&gt;
+          </span>
+          &lt;address&gt;
+           MIT, Manipal
+           Block 8, Room 416
+           567104
+          &lt;address&gt;
+
+        </code>
+      </pre>
+    </section>
+    <hr>
+    <section id = lists>
+      <h2>Lists</h2>
+      <ul>
+        <li><code>&lt;ol&gt;</code> - Ordered List</li>
+        <li><code>&lt;ul&gt;</code> - Unordered List</li>
+        <li><code>&lt;dl&gt;</code> - Description List</li>
+      </ul>
+      <h5>Example:</h5>
+      <pre>
+        <code>
+         &lt;ol&gt;
+          &lt;li&gt;Learn HTML&lt;/li&gt;
+          &lt;li&gt;Practice daily&lt;/li&gt;
+         &lt;/ol&gt;
+
+         &lt;dl&gt;
+          &lt;dt&gt;Description Term&lt;/dt&gt;
+          &lt;dd&gt;Description Details&lt;/dd&gt;
+         &lt;dl&gt;
+       </code>
+      </pre>
+    </section>
+    <hr>
+    <section id="navigation">
+      <h2>Links and Navigation</h2>
+      <ul>
+        <li><code>&lt;a&gt;</code>: Anchor tag for linking</li>
+        <li><code>&lt;href&gt;</code>: Destination to where it is linking. Can be of two types: Absolute Reference (when referencing something that is not present in the folder), and Relative Reference.</li>
+        <li><code>target="_blank"</code>: attributes that opens link in new tab</li>
+        <li><code>download, mailto, tel</code>: are other useful attributes</li>
+      </ul>
+      <h5>Examples:</h5>
+
+      <ul>
+        <li><code>&lt;a href="https://mdn.com" target="_blank"&gt;</code>MDN<code>&lt;/a&gt;</code></li>
+        <li><code>&lt;a href="#section-id"&gt;</code>Jump to section<code>&lt;/a&gt;</code></li>
+        <li><code>&lt;a href="myimage.jpg" download&gt;</code>Download this<code>&lt;/a&gt;</code></li>
+        <li><code>&lt;a href="mailto:me@example.com"&gt;</code>Email Me<code>&lt;/a&gt;</code></li>
+        <li><code>&lt;a href="tel:+911234567890"&gt;</code>Call Me<code>&lt;/a&gt;</code></li>
+      </ul>
+      <h5>Navigation:</h5>
+      <pre>
+        <code>
+          &lt;nav&gt;
+           &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="page.html"&gt;Page&lt;/a&gt;&lt;/li&gt;
+           &lt;/ul&gt;
+          &lt;/nav&gt;
+        </code>
+      </pre>
+    </section>
+    <hr>
+    <section id="attributes">
+      <h2>Attributes</h2>
+      <p>They provide additional information about HTML elements. They always go inside the opening tag and come in name and value pairs like this:<br>
+        <code>&lt;tagname attribute="value"&gt; &lt;/tagname&gt;</code>
+      </p>
+      <details>
+        <summary><strong>Common HTML Attributes</strong></summary>
+        <table>
+          <thead>
+            <tr>
+              <th>Attribute</th>
+              <th>Description</th>
+              <th>Common Tags</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>href</td><td>Specifies the link’s destination</td><td>&lt;a&gt;</td></tr>
+            <tr><td>src</td><td>Specifies the image/media source</td><td>&lt;img&gt;, &lt;script&gt;, &lt;iframe&gt;</td></tr>
+            <tr><td>alt</td><td>Alternative text for images</td><td>&lt;img&gt;</td></tr>
+            <tr><td>title</td><td>Tooltip on hover</td><td>All</td></tr>
+            <tr><td>id</td><td>Unique identifier for element</td><td>All</td></tr>
+            <tr><td>class</td><td>Assigns CSS class(es)</td><td>All</td></tr>
+            <tr><td>style</td><td>Inline styling</td><td>All</td></tr>
+            <tr><td>type</td><td>Specifies type (input, script)</td><td>&lt;input&gt;, &lt;script&gt;</td></tr>
+            <tr><td>value</td><td>Defines input or option value</td><td>&lt;input&gt;, &lt;option&gt;</td></tr>
+            <tr><td>name</td><td>Names input for form</td><td>&lt;input&gt;, &lt;select&gt;</td></tr>
+            <tr><td>placeholder</td><td>Hint inside input</td><td>&lt;input&gt;, &lt;textarea&gt;</td></tr>
+            <tr><td>required</td><td>Makes field mandatory</td><td>&lt;input&gt;, &lt;select&gt;</td></tr>
+            <tr><td>readonly</td><td>Non-editable field</td><td>&lt;input&gt;, &lt;textarea&gt;</td></tr>
+            <tr><td>disabled</td><td>Disables input/control</td><td>&lt;input&gt;, &lt;button&gt;</td></tr>
+            <tr><td>checked</td><td>Pre-selects checkbox/radio</td><td>&lt;input type="checkbox"&gt;/&lt;radio&gt;</td></tr>
+            <tr><td>multiple</td><td>Allows multiple selection</td><td>&lt;select&gt;, &lt;input type="file"&gt;</td></tr>
+            <tr><td>selected</td><td>Marks option as selected</td><td>&lt;option&gt;</td></tr>
+            <tr><td>maxlength</td><td>Character limit</td><td>&lt;input&gt;, &lt;textarea&gt;</td></tr>
+            <tr><td>min / max</td><td>Numeric limits</td><td>&lt;input type="number"&gt;</td></tr>
+            <tr><td>step</td><td>Value increment</td><td>&lt;input type="number"&gt;</td></tr>
+            <tr><td>autofocus</td><td>Auto-focus on load</td><td>&lt;input&gt;</td></tr>
+            <tr><td>autocomplete</td><td>Enable form autofill</td><td>&lt;input&gt;, &lt;form&gt;</td></tr>
+            <tr><td>download</td><td>Triggers file download</td><td>&lt;a&gt;</td></tr>
+            <tr><td>target</td><td>Where to open link</td><td>&lt;a&gt;, &lt;form&gt;</td></tr>
+            <tr><td>action</td><td>Form submission URL</td><td>&lt;form&gt;</td></tr>
+            <tr><td>method</td><td>Form HTTP method</td><td>&lt;form&gt;</td></tr>
+            <tr><td>enctype</td><td>Form encoding type</td><td>&lt;form&gt;</td></tr>
+            <tr><td>hidden</td><td>Hides element from view</td><td>All</td></tr>
+            <tr><td>loading</td><td>Lazy-loads image</td><td>&lt;img&gt;</td></tr>
+          </tbody>
+        </table>
+      </details>
+</section>
+
+</section>
+
+    </section>
+    <hr>
+    <section id="comments">
+      <h2>Comments</h2>
+      <p>HTML comments are ignored by the browser. These help you explain your code, temporarily disable parts, or keep some notes for your own</p>
+      <h5>Example:</h5>
+      <code id="comment">&lt;!--comment--&gt;</code>
+    </section>
+    <hr>
+    <section id="images">
+      <h2>Images</h2>
+      <p>Displays an image on page</p>
+      <ul>
+        <li><code>src</code>: source path,  contains the source/link of the image</li>
+        <li><code>alt</code>: alternative text, shows when the image doesn't load</li>
+        <li><code>loading="lazy"</code>: loads image only when needed. Enchances the performance</li>
+        <li><code>title, width, height</code>: these can also be added as attributes</li>
+      </ul>
+      <h5>Example:</h5>
+      <pre>
+        <code>
+          &lt;figure&gt;
+            &lt;img src="image.jpg" alt="A blue image" loading="lazy"&gt;
+            &lt;figcaption&gt;Blue Period&lt;/figcaption&gt;
+          &lt;/figure&gt;
+        </code>
+      </pre>
+    </section>
+    <hr>
+    <section id="semantic">
+      <h2>Semantic Tags</h2>
+      <p>Semantic tags descrive the purpose of the content</p>
+      <ul>
+        <li><code>&lt;header&gt;</code> Header <code>&lt;/header&gt;</code></li>
+        <li><code>&lt;main&gt;</code> Main Content <code>&lt;/main&gt;</code></li>
+        <li><code>&lt;footer&gt;</code> Footer <code>&lt;/footer&gt;</code></li>
+        <li><code>&lt;article&gt;</code> An article <code>&lt;/article&gt;</code></li>
+        <li><code>&lt;section&gt;</code> Group of content <code>&lt;/section&gt;</code></li>
+        <li><code>&lt;aside&gt;</code> Sidebar/extra info <code>&lt;/aside&gt;</code></li>
+        <li><code>&lt;nav&gt;</code> Navigation links <code>&lt;/nav&gt;</code></li>
+      </ul>
+
+      <h5>for toggle:</h5>
+      <pre>
+        &lt;details&gt;
+          &lt;summary&gt;Click to open&lt;/summary&gt;
+          &lt;p&gt;This is hidden content.&lt;/p&gt;
+        &lt;/details&gt;
+      </pre>
+    </section>
+    <hr>
+    <section id="tables">
+      <h2>Tables</h2>
+      <p>Organizes the content into rows and columns</p>
+    </section>
+    <hr>
+    <section id="forms">
+      <h2>Forms:</h2>
+      <p>to collect user input:</p>
+      <ol>
+        <li>
+          <dl>
+            <dt>Basic Form:</dt>
+            <dd>
+              <pre><code>
+              &lt;form action="https://httpbin.org/get" method="get"&gt;
+               &lt;label for="name"&gt;Name:&lt;/label&gt;
+               &lt;input type="text" id="name" name="name" required&gt;
+              &lt;/form&gt;
+              </code></pre>
+            </dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>Input Fields:</dt>
+            <br>
+            <dd>
+                <ul>
+                  <li><code>&lt;input type="password" required&gt;</code></li>
+                  <li><code>&lt;input type="number" min="1950" max="2020" step="10"&gt;</code></li>
+                  <li><code>&lt;input type="tel" pattern="[0-9]{5}[0-9]{5}"&gt;</code></li>
+                </ul>
+            </dd>
+          </dl>
+          <br>
+        </li>
+        <li>
+          <dl>
+            <dt>Select or Datalist:</dt>
+            <dd>
+              <pre><code>
+                &lt;select&gt;
+                  &lt;option&gt;Milk Coffee&lt;/option&gt;
+                &lt;/select&gt;
+
+                &lt;input list="coffee"&gt;
+                &lt;datalist id="coffee"&gt;
+                  &lt;option value="Black Coffee"&gt;
+                &lt;/datalist&gt;
+              </code></pre>
+            </dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>Radio Buttons and Checkboxes:</dt>
+            <dd>
+              <pre><code>
+              &lt;input type="radio" name="food" value="chicken"&gt; Chicken  
+              &lt;input type="checkbox" name="pets" value="dog"&gt; Dog
+              </code></pre>
+            </dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>Textarea and Buttons:</dt>
+            <dd>
+              <pre><code>
+              &lt;textarea rows="5" cols="30"&gt;&lt;/textarea&gt;
+              &lt;button type="submit"&gt;Submit&lt;/button&gt;
+              &lt;button type="reset"&gt;Reset&lt;/button&gt;
+              </code></pre>
+            </dd>
+          </dl>
+        </li>
+      </ol>
+    </section>
+    <hr>
+    <section id="debugging">
+      <h2>Debugging and Tips:</h2>
+      <ol>
+        <li>
+          Use <a href="https://validator.w3.org/detailed.html" target="_blank">W3C Validator</a> to check for HTML errors.
+        </li>
+        <li>
+          Video reference used: <a href="https://youtu.be/kUMe1FH4CHE?si=LHj-Pa6HBsSuaqRe" target="_blank">Tutorial</a>
+        </li>
+      </ol>
+    </section>
+  </main>
+  
+  <footer>
+    <hr>
+        <a href="#"> Back to the top?</a>
+        <br>
+        <a href="index.html" target="_blank">Back to home page</a>
+        <p>&lt;&lt;&lt; &copy; <a href="mailto:ananyabag1021@gmail.com" target="_blank">ANANYA</a> &gt;&gt;&gt;</p>
+  </footer>
+
+</body>
+</html>
